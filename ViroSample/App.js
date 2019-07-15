@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   AppRegistry,
   Text,
@@ -7,22 +7,23 @@ import {
   PixelRatio,
   TouchableHighlight,
   Button
-} from 'react-native';
+} from "react-native";
 
-import { ViroARSceneNavigator } from 'react-viro';
-import Maps from './components/Maps';
+import { ViroARSceneNavigator } from "react-viro";
+import Maps from "./components/Maps";
+import SignUp from "./components/Signup/SignUp";
 
 var sharedProps = {
-  apiKey: '2DF60EAD-EC00-4D0A-83DA-96E20F6E3352'
+  apiKey: "2DF60EAD-EC00-4D0A-83DA-96E20F6E3352"
 };
 
 // Sets the default scene you want for AR and VR
-var InitialARScene = require('./js/HelloWorldSceneAR');
+var InitialARScene = require("./js/HelloWorldSceneAR");
 
-var UNSET = 'UNSET';
+var UNSET = "UNSET";
 
-var AR_NAVIGATOR_TYPE = 'AR';
-var MAPS_NAVIGATOR_TYPE = 'MAPs';
+var AR_NAVIGATOR_TYPE = "AR";
+var MAPS_NAVIGATOR_TYPE = "MAPs";
 
 // This determines which type of experience to launch in, or UNSET, if the user should
 // be presented with a choice of AR or VR. By default, we offer the user a choice.
@@ -71,7 +72,8 @@ export default class ViroSample extends Component {
           <Text style={localStyles.titleText}>
             Choose your desired experience:
           </Text>
-
+          <SignUp />
+          {/*
           <TouchableHighlight
             style={localStyles.buttons}
             onPress={this._getExperienceButtonOnPress(AR_NAVIGATOR_TYPE)}
@@ -86,7 +88,7 @@ export default class ViroSample extends Component {
             underlayColor={'#FF0000'}
           >
             <Text style={localStyles.buttonText}>MAPS</Text>
-          </TouchableHighlight>
+          </TouchableHighlight> */}
         </View>
       </View>
     );
@@ -143,30 +145,30 @@ export default class ViroSample extends Component {
 var localStyles = StyleSheet.create({
   viroContainer: {
     flex: 1,
-    backgroundColor: 'black'
+    backgroundColor: "black"
   },
   outer: {
     flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'white'
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "white"
   },
   inner: {
     flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'black'
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "black"
   },
   titleText: {
     paddingTop: 30,
     paddingBottom: 20,
-    color: '#fff',
-    textAlign: 'center',
+    color: "#fff",
+    textAlign: "center",
     fontSize: 25
   },
   buttonText: {
-    color: '#fff',
-    textAlign: 'center',
+    color: "#fff",
+    textAlign: "center",
     fontSize: 20
   },
   buttons: {
@@ -176,10 +178,10 @@ var localStyles = StyleSheet.create({
     paddingBottom: 20,
     marginTop: 10,
     marginBottom: 10,
-    backgroundColor: '#68a0cf',
+    backgroundColor: "#68a0cf",
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#fff'
+    borderColor: "#fff"
   },
   exitButton: {
     height: 50,
@@ -188,10 +190,10 @@ var localStyles = StyleSheet.create({
     paddingBottom: 10,
     marginTop: 10,
     marginBottom: 10,
-    backgroundColor: '#68a0cf',
+    backgroundColor: "#68a0cf",
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#fff'
+    borderColor: "#fff"
   }
 });
 

@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: artifacts:viro_renderer:unspecified@jar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/8715fe32045bc012a1d805331e19ffbe/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-viro_renderer-release.aar/4f668210d68edcc46872e4fde052ae4d/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/8715fe32045bc012a1d805331e19ffbe/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/8715fe32045bc012a1d805331e19ffbe/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-viro_renderer-release.aar/4f668210d68edcc46872e4fde052ae4d/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-viro_renderer-release.aar/4f668210d68edcc46872e4fde052ae4d/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

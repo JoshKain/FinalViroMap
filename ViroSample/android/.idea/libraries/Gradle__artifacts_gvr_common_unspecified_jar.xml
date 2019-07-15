@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: artifacts:gvr_common:unspecified@jar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdk-common-1.180.0.aar/e4c98ba51f6ebea1a292a98db8b6f6a0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdk-common-1.180.0.aar/e4c98ba51f6ebea1a292a98db8b6f6a0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdk-common-1.180.0.aar/10798fa07a7edb437c509ff55c71a382/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdk-common-1.180.0.aar/10798fa07a7edb437c509ff55c71a382/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
