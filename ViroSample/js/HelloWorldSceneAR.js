@@ -21,18 +21,30 @@ export default class HelloWorldSceneAR extends Component {
 
     // Set initial state here
     this.state = {
-      text: "Initializing AR..."
+      text: "Initial...",
+      scale: [2.5, 2.5, 2.5]
     };
 
     // bind 'this' to functions
     this._onInitialized = this._onInitialized.bind(this);
+    this._onPinch = this._onPinch.bind(this);
   }
 
   render() {
     return (
       <ViroARScene>
+        <ViroText
+          text={this.state.text}
+          scale={[0.5, 0.5, 0.5]}
+          position={[0, 0, -1]}
+        />
         <ViroARImageMarker target={"targetOne"}>
-          <ViroNode dragType="FixedToWorld" onDrag={() => {}}>
+          <ViroNode
+            dragType="FixedToWorld"
+            onDrag={() => {}}
+            onPinch={this._onPinch}
+            scale={[0.2, 0.2, 0.2]}
+          >
             <ViroImage
               height={1}
               width={1}
@@ -40,7 +52,7 @@ export default class HelloWorldSceneAR extends Component {
               source={require("../images/platform.jpg")}
               rotation={[-70, 0, 0]}
               position={[0, 0.25, 0]}
-              scale={[0.5, 0.5, 0.5]}
+              // scale={[0.2, 0.2, 0.2]}
             />
           </ViroNode>
         </ViroARImageMarker>
@@ -56,6 +68,21 @@ export default class HelloWorldSceneAR extends Component {
     } else if (state == ViroConstants.TRACKING_NONE) {
       // Handle loss of tracking
     }
+  }
+  _onPinch(pinchState, scaleFactor, source) {
+    // let newScale = this.state.scale.map(x => {
+    //   return x * scaleFactor;
+    // });
+    if (pinchState == 3) {
+      this.setState({
+        // scale: newScale
+        text: "!!!!!"
+      });
+      // update scale of obj by multiplying by scaleFactor  when pinch ends.
+      return;
+    }
+    // this.setNativeProps({ scale: newScale });
+    //set scale using native props to reflect pinch.
   }
 }
 
