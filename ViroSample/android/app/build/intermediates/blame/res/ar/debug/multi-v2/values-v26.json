@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kellydavidson/Desktop/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-v26/values-v26.xml",
+            "outputFile": "/Users/samlea/Documents/Coding/Northcoders 2/Project-Phase/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/ead7dfa1ca4fea83c2b8b65df950df39/res/values-v26/values-v26.xml",
+                    "source": "/Users/samlea/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6ad5e6bf5efc0b8839cd36aa916e646c/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

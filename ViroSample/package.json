@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/slider": "^1.1.4",
     "react": "16.8.3",
     "react-native": "0.59.3",
     "react-native-maps": "git://github.com/react-native-community/react-native-maps.git#master",

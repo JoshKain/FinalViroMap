@@ -11,6 +11,8 @@ import com.viromedia.bridge.ReactViroPackage;
 import com.facebook.soloader.SoLoader;
 import com.airbnb.android.react.maps.MapsPackage;
 
+import com.reactnativecommunity.slider.ReactSliderPackage;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,8 +26,12 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(new MainReactPackage(),
-          new ReactViroPackage(ReactViroPackage.ViroPlatform.valueOf(BuildConfig.VR_PLATFORM)), new MapsPackage());
+      return Arrays.<ReactPackage>asList(
+        new MainReactPackage(),
+        new ReactSliderPackage(),
+          new ReactViroPackage(ReactViroPackage.ViroPlatform.valueOf(BuildConfig.VR_PLATFORM)), 
+          new MapsPackage()
+          );
     }
 
     @Override
