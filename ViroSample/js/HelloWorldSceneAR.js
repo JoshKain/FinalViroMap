@@ -10,7 +10,9 @@ import {
   ViroConstants,
   ViroARTrackingTargets,
   ViroARImageMarker,
-  ViroImage
+  ViroImage,
+  ViroARPlaneSelector,
+  ViroNode
 } from "react-viro";
 
 export default class HelloWorldSceneAR extends Component {
@@ -30,13 +32,17 @@ export default class HelloWorldSceneAR extends Component {
     return (
       <ViroARScene>
         <ViroARImageMarker target={"targetOne"}>
-          <ViroImage
-            height={1}
-            width={1}
-            placeholderSource={require("../images/platform.jpg")}
-            source={require("../images/platform.jpg")}
-            rotation={[-90, 0, 0]}
-          />
+          <ViroNode dragType="FixedToWorld" onDrag={() => {}}>
+            <ViroImage
+              height={1}
+              width={1}
+              placeholderSource={require("../images/platform.jpg")}
+              source={require("../images/platform.jpg")}
+              rotation={[-70, 0, 0]}
+              position={[0, 0.25, 0]}
+              scale={[0.5, 0.5, 0.5]}
+            />
+          </ViroNode>
         </ViroARImageMarker>
       </ViroARScene>
     );
