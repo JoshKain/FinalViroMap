@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kellydavidson/Desktop/ViroMapVersion1/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-mn-rMN/values-mn-rMN.xml",
+            "outputFile": "/Users/kellydavidson/Desktop/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-mn-rMN/values-mn-rMN.xml",
             "map": [
                 {
                     "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.7.1.aar/a37595b8ce2df3d5833d5c021c5d3342/res/values-mn-rMN/values-mn-rMN.xml",

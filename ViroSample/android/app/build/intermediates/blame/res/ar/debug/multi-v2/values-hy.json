@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kellydavidson/Desktop/ViroMapVersion1/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-hy/values-hy.xml",
+            "outputFile": "/Users/kellydavidson/Desktop/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-hy/values-hy.xml",
             "map": [
+                {
+                    "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/core-1.7.0.aar/db3b83d816d74a72ea3c635416e6f11e/res/values-hy/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,239,292,402,519",
+                        "endColumns": "48,52,109,116,63",
+                        "endOffsets": "238,291,401,518,582"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,158,215,329,450",
+                        "endColumns": "52,56,113,120,67",
+                        "endOffsets": "153,210,324,445,513"
+                    }
+                },
                 {
                     "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/c0f31a484a823e1269c246183275b580/res/values-hy/values-hy.xml",
                     "from": {
@@ -35,23 +52,6 @@
                         "startOffsets": "4416",
                         "endColumns": "209",
                         "endOffsets": "4621"
-                    }
-                },
-                {
-                    "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/core-1.7.0.aar/804f460d3fb7863a7c3fb9990eec7efd/res/values-hy/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,239,292,402,519",
-                        "endColumns": "48,52,109,116,63",
-                        "endOffsets": "238,291,401,518,582"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,158,215,329,450",
-                        "endColumns": "52,56,113,120,67",
-                        "endOffsets": "153,210,324,445,513"
                     }
                 },
                 {

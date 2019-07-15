@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kellydavidson/Desktop/ViroMapVersion1/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-ne/values-ne.xml",
+            "outputFile": "/Users/kellydavidson/Desktop/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-ne/values-ne.xml",
             "map": [
+                {
+                    "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/core-1.7.0.aar/db3b83d816d74a72ea3c635416e6f11e/res/values-ne/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,245,303,398,494",
+                        "endColumns": "54,57,94,95,68",
+                        "endOffsets": "244,302,397,493,562"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,164,226,325,425",
+                        "endColumns": "58,61,98,99,72",
+                        "endOffsets": "159,221,320,420,493"
+                    }
+                },
                 {
                     "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/e8ee25ae09e7f0907b29dfde85656b93/res/values-ne/values.xml",
                     "from": {
@@ -18,23 +35,6 @@
                         "startOffsets": "3295,3412,3602,3738,3857,4087,4225,4365,4722,4961,5081,5276,5415,5622,5804,5900,6002",
                         "endColumns": "116,189,135,118,229,137,139,133,238,119,194,138,206,181,95,101,120",
                         "endOffsets": "3407,3597,3733,3852,4082,4220,4360,4494,4956,5076,5271,5410,5617,5799,5895,5997,6118"
-                    }
-                },
-                {
-                    "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/core-1.7.0.aar/804f460d3fb7863a7c3fb9990eec7efd/res/values-ne/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,245,303,398,494",
-                        "endColumns": "54,57,94,95,68",
-                        "endOffsets": "244,302,397,493,562"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,164,226,325,425",
-                        "endColumns": "58,61,98,99,72",
-                        "endOffsets": "159,221,320,420,493"
                     }
                 },
                 {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kellydavidson/Desktop/ViroMapVersion1/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-ms/values-ms.xml",
+            "outputFile": "/Users/kellydavidson/Desktop/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/c00d74cabd99b4c9ed92f5d13387ec57/res/values-ms/values.xml",
@@ -18,6 +18,23 @@
                         "startOffsets": "4379",
                         "endColumns": "204",
                         "endOffsets": "4579"
+                    }
+                },
+                {
+                    "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/core-1.7.0.aar/db3b83d816d74a72ea3c635416e6f11e/res/values-ms/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,236,287,385,483",
+                        "endColumns": "45,50,97,97,60",
+                        "endOffsets": "235,286,384,482,543"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,155,210,312,414",
+                        "endColumns": "49,54,101,101,64",
+                        "endOffsets": "150,205,307,409,474"
                     }
                 },
                 {
@@ -69,23 +86,6 @@
                         "startOffsets": "479,590,695,803,890,994,1105,1183,1262,1353,1446,1541,1635,1734,1827,1922,2016,2107,2198,2278,2390,2499,2596,2705,2808,2915,3074,6020",
                         "endColumns": "110,104,107,86,103,110,77,78,90,92,94,93,98,92,94,93,90,90,79,111,108,96,108,102,106,158,100,79",
                         "endOffsets": "585,690,798,885,989,1100,1178,1257,1348,1441,1536,1630,1729,1822,1917,2011,2102,2193,2273,2385,2494,2591,2700,2803,2910,3069,3170,6095"
-                    }
-                },
-                {
-                    "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/core-1.7.0.aar/804f460d3fb7863a7c3fb9990eec7efd/res/values-ms/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,236,287,385,483",
-                        "endColumns": "45,50,97,97,60",
-                        "endOffsets": "235,286,384,482,543"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,155,210,312,414",
-                        "endColumns": "49,54,101,101,64",
-                        "endOffsets": "150,205,307,409,474"
                     }
                 }
             ]
