@@ -4,7 +4,14 @@ import React, { Component } from "react";
 
 import { StyleSheet, View, Button, Text } from "react-native";
 
-import { ViroARScene, ViroText, ViroConstants } from "react-viro";
+import {
+  ViroARScene,
+  ViroText,
+  ViroConstants,
+  ViroARTrackingTargets,
+  ViroARImageMarker,
+  ViroImage
+} from "react-viro";
 
 export default class HelloWorldSceneAR extends Component {
   constructor() {
@@ -23,7 +30,6 @@ export default class HelloWorldSceneAR extends Component {
     return (
       <ViroARScene>
         <ViroARImageMarker target={"targetOne"}>
-          {/* <ViroBox position={[0, 0.25, 0]} scale={[0.5, 0.5, 0.5]} /> */}
           <ViroImage
             height={1}
             width={1}
@@ -49,7 +55,7 @@ export default class HelloWorldSceneAR extends Component {
 
 ViroARTrackingTargets.createTargets({
   targetOne: {
-    source: require("../images/target.jpg"),
+    source: require("../images/cup.jpg"),
     orientation: "Up",
     physicalWidth: 0.25 // real world width in meters
   }
