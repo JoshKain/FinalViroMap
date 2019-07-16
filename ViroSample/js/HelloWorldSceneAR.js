@@ -40,12 +40,36 @@ export default class HelloWorldSceneAR extends Component {
             <ViroImage
               height={1}
               width={1}
-              placeholderSource={require('../images/platform.jpg')}
-              source={require('../images/platform.jpg')}
-              rotation={[-10, 0, 0]}
-              position={[0, 2, 0]}
+              placeholderSource={require('../images/victoria-station-1926.jpg')}
+              source={require('../images/victoria-station-1926..jpg')}
+              rotation={[-10, 0, 0]} // ---> working!
+              position={[0, 2, 0]} // ---> working!
+              // rotation={[-70, 0, 0]}
+              // position={[0, 0, 0]}
               ref={this._setARNodeRef.bind(this)}
-              // scale={[0.2, 0.2, 0.2]}
+              scale={[0.2, 0.2, 0.2]}
+            />
+          </ViroNode>
+        </ViroARImageMarker>
+
+        <ViroARImageMarker target={'targetTwo'}>
+          <ViroNode
+            dragType="FixedToWorld"
+            onDrag={() => {}}
+            onPinch={this._onPinch.bind(this)}
+            scale={[0.6, 0.6, 0.6]}
+          >
+            <ViroImage
+              height={1}
+              width={1}
+              placeholderSource={require('../images/blue-two.jpg')}
+              source={require('../images/blue-two.jpg')}
+              rotation={[-10, 0, 0]} // ---> working!
+              position={[0, 2, 0]} // ---> working!
+              // rotation={[-70, 0, 0]}
+              // position={[0, 0, 0]}
+              ref={this._setARNodeRef.bind(this)}
+              scale={[0.2, 0.2, 0.2]}
             />
           </ViroNode>
         </ViroARImageMarker>
@@ -89,9 +113,14 @@ export default class HelloWorldSceneAR extends Component {
 
 ViroARTrackingTargets.createTargets({
   targetOne: {
-    source: require('../images/bird.jpg'),
+    source: require('../images/rs1.png'),
     orientation: 'Up',
-    physicalWidth: 0.25 // real world width in meters
+    physicalWidth: 0.148 // real world width in meters // A5 = 0.148, A6 = 0.105
+  },
+  targetTwo: {
+    source: require('../images/rs2.png'),
+    orientation: 'Up',
+    physicalWidth: 0.148 // real world width in meters // A5 = 0.148, A6 = 0.105
   }
 });
 
