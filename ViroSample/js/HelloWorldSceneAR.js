@@ -19,7 +19,8 @@ export default class HelloWorldSceneAR extends Component {
   // Set initial state here
   state = {
     text: "Initial...",
-    scale: [2.5, 2.5, 2.5]
+    scale: [2.5, 2.5, 2.5],
+    position: []
   };
 
   render() {
@@ -48,6 +49,7 @@ export default class HelloWorldSceneAR extends Component {
           <ViroNode
             dragType="FixedToWorld"
             onDrag={this._onDrag.bind(this)}
+            onClick={this._onClick.bind(this)}
             onPinch={this._onPinch.bind(this)}
             scale={[0.6, 0.6, 0.6]}
           >
@@ -61,7 +63,7 @@ export default class HelloWorldSceneAR extends Component {
               // rotation={[-70, 0, 0]}
               // position={[0, 0, 0]}
               ref={this._setARNodeRef.bind(this)}
-              scale={[0.2, 0.2, 0.2]}
+              scale={[1, 1, 1]}
             />
           </ViroNode>
         </ViroARImageMarker>
@@ -105,14 +107,18 @@ export default class HelloWorldSceneAR extends Component {
   }
 
   _onDrag(draggedToPosition, source) {
-    console.warn(
-      "Dragged to: x" +
-        draggedToPosition[0] +
-        " y:" +
-        draggedToPosition[1] +
-        " z: " +
+    this.setState({
+      position: [
+        draggedToPosition[0],
+        draggedToPosition[1],
         draggedToPosition[2]
-    );
+      ]
+    });
+  }
+
+  _onClick() {
+    console.warn(this.state.position);
+    console.warn("the position", this.state.position);
   }
 
   _onPinch(pinchState, scaleFactor, source) {
