@@ -31,6 +31,20 @@ export default class HelloWorldSceneAR extends Component {
           position={[0, 0, -1]}
         />
         <ViroARImageMarker target={"targetOne"}>
+          <ViroNode>
+            <ViroImage
+              height={1}
+              width={1}
+              placeholderSource={require("../images/red-one.jpg")}
+              source={require("../images/red-one.jpg")}
+              rotation={[-90, 0, 0]} // ---> working!
+              position={[0, 0, 0]} // ---> working!
+              // rotation={[-70, 0, 0]}
+              // position={[0, 0, 0]}
+              ref={this._setARNodeRef.bind(this)}
+              scale={[0.2, 0.2, 0.2]}
+            />
+          </ViroNode>
           <ViroNode
             dragType="FixedToWorld"
             onDrag={() => {}}
