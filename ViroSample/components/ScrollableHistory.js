@@ -41,11 +41,6 @@ export default class Hello extends Component {
               This transformed the textile industry as well as Manchester.
             </Text>
           </View>
-          <Button
-            title="View on Map"
-            color="gray"
-            accessibilityLabel="see location on the map"
-          />
           <Image
             source={require("../components/victoria.jpg")}
             style={{ width: 400, height: 200 }}
@@ -60,6 +55,11 @@ export default class Hello extends Component {
             creating a through route from Liverpool to Yorkshire with a joint
             station serving the centre of Manchester.{" "}
           </Text>
+          <Button
+            title="View on Map"
+            color="gray"
+            accessibilityLabel="see location on the map"
+          />
           <Image
             source={require("../components/piccadilly.jpg")}
             style={{ width: 400, height: 200 }}
@@ -76,6 +76,11 @@ export default class Hello extends Component {
             move to Manchester Central Library. The sunken garden was a remnant
             of the hospital's basement.{" "}
           </Text>
+          <Button
+            title="View on Map"
+            color="gray"
+            accessibilityLabel="see location on the map"
+          />
           <Image
             source={require("../components/Assize.jpg")}
             style={{ width: 400, height: 200 }}
@@ -88,6 +93,11 @@ export default class Hello extends Component {
             Manchester. Widely admired,[1] it has been referred to as one of
             Britain's 'lost buildings'.{" "}
           </Text>
+          <Button
+            title="View on Map"
+            color="gray"
+            accessibilityLabel="see location on the map"
+          />
           <Image
             source={require("../components/hulmefire.jpg")}
             style={{ width: 400, height: 200 }}
@@ -97,6 +107,11 @@ export default class Hello extends Component {
             MMU halls are now build on the site after a serious fire took place
             causing the building to dramatically collapse.{" "}
           </Text>
+          <Button
+            title="View on Map"
+            color="gray"
+            accessibilityLabel="see location on the map"
+          />
         </View>
       </ScrollView>
     );
