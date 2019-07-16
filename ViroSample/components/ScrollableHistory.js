@@ -41,6 +41,11 @@ export default class Hello extends Component {
               This transformed the textile industry as well as Manchester.
             </Text>
           </View>
+          <Button
+            title="View on Map"
+            color="gray"
+            accessibilityLabel="see location on the map"
+          />
           <Image
             source={require("../components/victoria.jpg")}
             style={{ width: 400, height: 200 }}
@@ -97,17 +102,6 @@ export default class Hello extends Component {
     );
   }
 }
-
-// var hellostyles = StyleSheet.create({
-//   text: {
-//     color: "black",
-//     textAlign: "left",
-//     fontSize: 16,
-//     backgroundColor: "white",
-//     margin: 10,
-//     padding: 5
-//   }
-// });
 
 const styles = StyleSheet.create({
   container: {
