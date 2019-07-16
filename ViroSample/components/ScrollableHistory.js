@@ -147,5 +147,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     margin: 10,
     padding: 5
+  },
+  button: {
+    style: "##2196f3"
   }
 });
