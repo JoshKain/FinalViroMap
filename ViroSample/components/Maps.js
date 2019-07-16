@@ -91,6 +91,9 @@ export default class Maps extends Component {
       latitude: 53.487539, longitude: -2.242396, title: "Victoria Station", description: "quarter to nine - feeling fine", url: 'victoria', visitors: 5
     }
 
+    const mancoats = {
+      latitude: 53.484952, longitude: -2.225563, title: "Man in Ancoats", description: "Man/c + coat in Ancoats = Mancoats", url: 'mancoats', visitors: 7
+    }
     return (
 
       <Fragment>
@@ -138,6 +141,13 @@ export default class Maps extends Component {
             </MapView.Marker>
             <MapView.Marker onPress={() => this.onDoublePress(victoria)} coordinate={victoria} title={victoria.title} description={victoria.description}><Image resizeMode="contain" style={{ width: 50, height: 50, borderRadius: 70 }} source={require('./victoria.jpg')} />
               <MapView.Callout onPress={() => this.markerClick(victoria)} >
+                <View>
+
+                </View>
+              </MapView.Callout >
+            </MapView.Marker>
+            <MapView.Marker onPress={() => this.onDoublePress(mancoats)} coordinate={mancoats} title={mancoats.title} description={mancoats.description}><Image resizeMode="contain" style={{ width: 50, height: 50, borderRadius: 70 }} source={require('./mancoats.jpg')} />
+              <MapView.Callout onPress={() => this.markerClick(mancoats)} >
                 <View>
 
                 </View>
