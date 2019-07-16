@@ -47,7 +47,7 @@ export default class HelloWorldSceneAR extends Component {
           </ViroNode>
           <ViroNode
             dragType="FixedToWorld"
-            onDrag={() => {}}
+            onDrag={this._onDrag.bind(this)}
             onPinch={this._onPinch.bind(this)}
             scale={[0.6, 0.6, 0.6]}
           >
@@ -69,7 +69,6 @@ export default class HelloWorldSceneAR extends Component {
         <ViroARImageMarker target={"targetTwo"}>
           <ViroNode
             dragType="FixedToWorld"
-            onDrag={() => {}}
             onPinch={this._onPinch.bind(this)}
             scale={[0.6, 0.6, 0.6]}
           >
@@ -103,6 +102,17 @@ export default class HelloWorldSceneAR extends Component {
 
   _setARNodeRef(component) {
     this.arNodeRef = component;
+  }
+
+  _onDrag(draggedToPosition, source) {
+    console.warn(
+      "Dragged to: x" +
+        draggedToPosition[0] +
+        " y:" +
+        draggedToPosition[1] +
+        " z: " +
+        draggedToPosition[2]
+    );
   }
 
   _onPinch(pinchState, scaleFactor, source) {
