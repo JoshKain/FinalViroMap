@@ -22,7 +22,7 @@ import {
   ImageBackground,
   ScrollView,
   Image,
-  TouchableHighlight
+  TouchableOpacity
 } from "react-native";
 import { Text, AppState } from "react-native";
 
@@ -84,12 +84,41 @@ export default class Homepage extends Component {
   //     });
   // }
 
-  handleCard = event => {
-    console.warn("hellop");
+  handleCardAssize = event => {
     this.setState({
       mapView: true,
-      latitude: 53.481,
-      longitude: -2.2369,
+      latitude: 53.492021,
+      longitude: -2.246167,
+      latitudeDelta: 0.03,
+      longitudeDelta: 0.03
+    });
+  };
+
+  handleCardVictoria = event => {
+    this.setState({
+      mapView: true,
+      latitude: 53.487284,
+      longitude: -2.242343,
+      latitudeDelta: 0.03,
+      longitudeDelta: 0.03
+    });
+  };
+
+  handleCardHulme = event => {
+    this.setState({
+      mapView: true,
+      latitude: 53.46918,
+      longitude: -2.2403,
+      latitudeDelta: 0.03,
+      longitudeDelta: 0.03
+    });
+  };
+
+  handleCardPicadilly = event => {
+    this.setState({
+      mapView: true,
+      latitude: 53.46918,
+      longitude: -2.2403,
       latitudeDelta: 0.03,
       longitudeDelta: 0.03
     });
@@ -106,62 +135,67 @@ export default class Homepage extends Component {
             <Icon name="menu" />
           </Button>
 
-          <Card style={styles.card}>
-            <ImageBackground
-              source={require("../expo-sample/Assize.jpg")}
-              style={{ width: 400, height: 200 }}
-            >
-              <Text onPress={this.handleCard} style={styles.title}>
-                Manchester Assize Courts
-              </Text>
-              {/* <Text style={styles.text}>
+          <TouchableOpacity onPress={this.handleCardAssize}>
+            <Card style={styles.card} pointerEvents="none">
+              <ImageBackground
+                source={require("../expo-sample/Assize.jpg")}
+                style={{ width: 400, height: 200 }}
+              >
+                <Text style={styles.title}>Manchester Assize Courts</Text>
+                {/* <Text style={styles.text}>
               The Manchester Assize Courts were law courts on Great Ducie Street
               in the Strangeways district of Manchester, England. It was 279 ft
               (85 m) tall and from 1864 to 1877 the tallest building in
               Manchester. Widely admired,[1] it has been referred to as one of
               Britain's 'lost buildings'.{" "}
             </Text> */}
-            </ImageBackground>
-          </Card>
+              </ImageBackground>
+            </Card>
+          </TouchableOpacity>
 
-          <Card>
-            <ImageBackground
-              source={require("../expo-sample/victoria.jpg")}
-              style={{ width: 400, height: 200 }}
-            >
-              <Text style={styles.title}>Victoria Station</Text>
-              {/* <Text style={styles.text}>
+          <TouchableOpacity onPress={this.handleCardVictoria}>
+            <Card style={styles.card} pointerEvents="none">
+              <ImageBackground
+                source={require("../expo-sample/victoria.jpg")}
+                style={{ width: 400, height: 200 }}
+              >
+                <Text style={styles.title}>Victoria Station</Text>
+                {/* <Text style={styles.text}>
             The Manchester and Le eds Railway (M&LR) was founded in 1836 and the
             company began building its line between Manchester and Leeds in
             1837. Originally its line terminated at Manchester Oldham Road which
             opened on 3 July 1839. The company realised it would be advantageous
             to join its line to the Liverpool and Manchester Railway (L&MR)
             creating a through route from Liverpool to Yorkshire with a joint
-            station serving the centre of Manchester.{" "} */}
-              {/* </Text> */}
-            </ImageBackground>
-          </Card>
+            station serving the centre of Manchester. */}
+                {/* </Text> */}
+              </ImageBackground>
+            </Card>
+          </TouchableOpacity>
 
-          <Card>
-            <ImageBackground
-              source={require("../expo-sample/hulmefire.jpg")}
-              style={{ width: 400, height: 200 }}
-            >
-              <Text style={styles.title}>Opal Halls MMU</Text>
-              {/* <Text style={styles.text}>
+          <TouchableOpacity onPress={this.handleCardHulme}>
+            <Card style={styles.card} pointerEvents="none">
+              <ImageBackground
+                source={require("../expo-sample/hulmefire.jpg")}
+                style={{ width: 400, height: 200 }}
+              >
+                <Text style={styles.title}>Opal Halls MMU</Text>
+                {/* <Text style={styles.text}>
             MMU halls are now build on the site after a serious fire took place
-            causing the building to dramatically collapse.{" "}
+            causing the building to dramatically collapse.
           </Text> */}
-            </ImageBackground>
-          </Card>
+              </ImageBackground>
+            </Card>
+          </TouchableOpacity>
 
-          <Card>
-            <ImageBackground
-              source={require("../expo-sample/piccadilly.jpg")}
-              style={{ width: 400, height: 200 }}
-            >
-              <Text style={styles.title}>Picadilly Gardens</Text>
-              {/* <Text style={styles.text}>
+          <TouchableOpacity onPress={this.handleCardPicadilly}>
+            <Card style={styles.card} pointerEvents="none">
+              <ImageBackground
+                source={require("../expo-sample/piccadilly.jpg")}
+                style={{ width: 400, height: 200 }}
+              >
+                <Text style={styles.title}>Picadilly Gardens</Text>
+                {/* <Text style={styles.text}>
             Before 1755: The area was occupied by water-filled clay pits called
             the Daub Holes. The Lord of the Manor donated the site and the pits
             were replaced by a fine ornamental pond. 1914: After several years
@@ -170,10 +204,11 @@ export default class Homepage extends Component {
             the city centre. The Manchester Public Free Library Reference
             Department was housed on the site for a number of years before the
             move to Manchester Central Library. The sunken garden was a remnant
-            of the hospital's basement.{" "}
+            of the hospital's basement.
           </Text> */}
-            </ImageBackground>
-          </Card>
+              </ImageBackground>
+            </Card>
+          </TouchableOpacity>
         </ScrollView>
       );
     } else {
