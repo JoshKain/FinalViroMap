@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { StyleSheet, View, Button, Text } from 'react-native';
+import { StyleSheet, View, Button, Text } from "react-native";
 
 import {
   ViroARScene,
@@ -13,12 +13,12 @@ import {
   ViroImage,
   ViroARPlaneSelector,
   ViroNode
-} from 'react-viro';
+} from "react-viro";
 
 export default class HelloWorldSceneAR extends Component {
   // Set initial state here
   state = {
-    text: 'Initial...',
+    text: "Initial...",
     scale: [2.5, 2.5, 2.5]
   };
 
@@ -30,7 +30,7 @@ export default class HelloWorldSceneAR extends Component {
           scale={[0.5, 0.5, 0.5]}
           position={[0, 0, -1]}
         />
-        <ViroARImageMarker target={'targetOne'}>
+        <ViroARImageMarker target={"targetOne"}>
           <ViroNode
             dragType="FixedToWorld"
             onDrag={() => {}}
@@ -40,8 +40,8 @@ export default class HelloWorldSceneAR extends Component {
             <ViroImage
               height={1}
               width={1}
-              placeholderSource={require('../images/victoria-station-1926.jpg')}
-              source={require('../images/victoria-station-1926..jpg')}
+              placeholderSource={require("../images/victoria-station-1926.jpg")}
+              source={require("../images/victoria-station-1926.jpg")}
               rotation={[-10, 0, 0]} // ---> working!
               position={[0, 2, 0]} // ---> working!
               // rotation={[-70, 0, 0]}
@@ -52,7 +52,7 @@ export default class HelloWorldSceneAR extends Component {
           </ViroNode>
         </ViroARImageMarker>
 
-        <ViroARImageMarker target={'targetTwo'}>
+        <ViroARImageMarker target={"targetTwo"}>
           <ViroNode
             dragType="FixedToWorld"
             onDrag={() => {}}
@@ -62,8 +62,8 @@ export default class HelloWorldSceneAR extends Component {
             <ViroImage
               height={1}
               width={1}
-              placeholderSource={require('../images/blue-two.jpg')}
-              source={require('../images/blue-two.jpg')}
+              placeholderSource={require("../images/blue-two.jpg")}
+              source={require("../images/blue-two.jpg")}
               rotation={[-10, 0, 0]} // ---> working!
               position={[0, 2, 0]} // ---> working!
               // rotation={[-70, 0, 0]}
@@ -80,7 +80,7 @@ export default class HelloWorldSceneAR extends Component {
   _onInitialized(state, reason) {
     if (state == ViroConstants.TRACKING_NORMAL) {
       this.setState({
-        text: 'Hello Mate!'
+        text: "Hello Mate!"
       });
     } else if (state == ViroConstants.TRACKING_NONE) {
       // Handle loss of tracking
@@ -113,24 +113,24 @@ export default class HelloWorldSceneAR extends Component {
 
 ViroARTrackingTargets.createTargets({
   targetOne: {
-    source: require('../images/rs1.png'),
-    orientation: 'Up',
+    source: require("../images/rs1.png"),
+    orientation: "Up",
     physicalWidth: 0.148 // real world width in meters // A5 = 0.148, A6 = 0.105
   },
   targetTwo: {
-    source: require('../images/rs2.png'),
-    orientation: 'Up',
+    source: require("../images/rs2.png"),
+    orientation: "Up",
     physicalWidth: 0.148 // real world width in meters // A5 = 0.148, A6 = 0.105
   }
 });
 
 var styles = StyleSheet.create({
   helloWorldTextStyle: {
-    fontFamily: 'Arial',
+    fontFamily: "Arial",
     fontSize: 30,
-    color: '#ffffff',
-    textAlignVertical: 'center',
-    textAlign: 'center'
+    color: "#ffffff",
+    textAlignVertical: "center",
+    textAlign: "center"
   }
 });
 
