@@ -56,8 +56,8 @@ export default class Hello extends Component {
             station serving the centre of Manchester.{" "}
           </Text>
           <Button
+            style={styles.button}
             title="View on Map"
-            color="gray"
             accessibilityLabel="see location on the map"
           />
           <Image
@@ -77,8 +77,8 @@ export default class Hello extends Component {
             of the hospital's basement.{" "}
           </Text>
           <Button
+            style={styles.button}
             title="View on Map"
-            color="gray"
             accessibilityLabel="see location on the map"
           />
           <Image
@@ -94,8 +94,8 @@ export default class Hello extends Component {
             Britain's 'lost buildings'.{" "}
           </Text>
           <Button
+            style={styles.button}
             title="View on Map"
-            color="gray"
             accessibilityLabel="see location on the map"
           />
           <Image
@@ -108,8 +108,8 @@ export default class Hello extends Component {
             causing the building to dramatically collapse.{" "}
           </Text>
           <Button
+            style={styles.button}
             title="View on Map"
-            color="gray"
             accessibilityLabel="see location on the map"
           />
         </View>
