@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kellydavidson/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-id/values-id.xml",
+            "outputFile": "/Users/samlea/Documents/Coding/Northcoders 2/Project-Phase/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-id/values-id.xml",
             "map": [
                 {
-                    "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/core-1.7.0.aar/f5642451f4f714fd09b89d5dd6744b9b/res/values-id/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,236,288,379,471",
-                        "endColumns": "45,51,90,91,62",
-                        "endOffsets": "235,287,378,470,533"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,105,161,256,352",
-                        "endColumns": "49,55,94,95,66",
-                        "endOffsets": "100,156,251,347,414"
-                    }
-                },
-                {
-                    "source": "/Users/kellydavidson/.gradle/caches/transforms-1/files-1.1/sdk-common-1.180.0.aar/95de5daca79b5d7a6b63c1c9870510c5/res/values-id/values.xml",
+                    "source": "/Users/samlea/.gradle/caches/transforms-1/files-1.1/sdk-common-1.180.0.aar/84d3537f9c14a19e6e5627b16b8ec2c7/res/values-id/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -35,6 +18,23 @@
                         "startOffsets": "419,487,535,587,665,840,963,1019,1103,1185,1263,1323,1530,1722,1789,1865,1951,2055,2158,2230,2281,2338",
                         "endColumns": "67,47,51,77,174,122,55,83,81,77,59,206,191,66,75,85,103,102,71,50,56,69",
                         "endOffsets": "482,530,582,660,835,958,1014,1098,1180,1258,1318,1525,1717,1784,1860,1946,2050,2153,2225,2276,2333,2403"
+                    }
+                },
+                {
+                    "source": "/Users/samlea/.gradle/caches/transforms-1/files-1.1/core-1.7.0.aar/b9106e03debb51591a3695bb68f923c4/res/values-id/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,236,288,379,471",
+                        "endColumns": "45,51,90,91,62",
+                        "endOffsets": "235,287,378,470,533"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,105,161,256,352",
+                        "endColumns": "49,55,94,95,66",
+                        "endOffsets": "100,156,251,347,414"
                     }
                 }
             ]

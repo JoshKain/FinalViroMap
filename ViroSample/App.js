@@ -11,6 +11,9 @@ import {
 
 import { ViroARSceneNavigator } from 'react-viro';
 import Maps from './components/Maps';
+import AR from './components/AR';
+
+import Slider from '@react-native-community/slider';
 
 var sharedProps = {
   apiKey: '2DF60EAD-EC00-4D0A-83DA-96E20F6E3352'
@@ -95,28 +98,18 @@ export default class ViroSample extends Component {
   // Returns the ViroARSceneNavigator which will start the AR experience
   _getARNavigator() {
     return (
-      <>
-        <View>
-          <Button
-            // onPress={this.handlePress}
-            onPress={this._getExperienceButtonOnPress(UNSET)}
-            title="Back"
-            color={this.state.color}
-            accessibilityLabel="Navigate back a page"
-          />
-        </View>
-        <ViroARSceneNavigator
-          {...this.state.sharedProps}
-          getExperienceButtonOnPress={this._getExperienceButtonOnPress(UNSET)}
-          initialScene={{ scene: InitialARScene }}
-        />
-      </>
+      <AR
+        // sharedProps={this.state.sharedProps}
+        name={'jennifer'}
+        getExperienceButtonOnPress={this._getExperienceButtonOnPress(UNSET)}
+      />
     );
   }
 
   // This function returns an anonymous/lambda function to be used
   // by the experience selector buttons
   _getExperienceButtonOnPress(navigatorType) {
+    console.warn('hitting getExeprienceButtonOnPress...');
     return () => {
       this.setState({
         navigatorType: navigatorType
