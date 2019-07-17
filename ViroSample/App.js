@@ -99,15 +99,13 @@ export default class ViroSample extends Component {
   _getARNavigator() {
     return (
       <AR
-        // sharedProps={this.state.sharedProps}
-        name={'jennifer'}
         getExperienceButtonOnPress={this._getExperienceButtonOnPress(UNSET)}
       />
     );
   }
 
   // This function returns an anonymous/lambda function to be used
-  // by the experience selector buttons
+  // by the experience selector buttonsHelloWorldSceneAR
   _getExperienceButtonOnPress(navigatorType) {
     console.warn('hitting getExeprienceButtonOnPress...');
     return () => {

@@ -24,8 +24,24 @@ export default class HelloWorldSceneAR extends Component {
   };
 
   render() {
+    const {
+      rotationX,
+      rotationY,
+      rotationZ,
+      opacity
+    } = this.props.arSceneNavigator.viroAppProps;
+
+    const onClick = () => {
+      console.warn('onClick-ing! inside the render');
+      // console.warn(this.state.position);
+      console.warn('position:', this.state.position);
+      console.warn('rotation:', [rotationX, rotationY, rotationZ]);
+    };
+
     return (
-      <ViroARScene>
+      <ViroARScene
+      //  onTrackingUpdated={onInitialized()}
+      >
         <ViroText
           text={this.state.text}
           scale={[0.5, 0.5, 0.5]}
@@ -41,7 +57,6 @@ export default class HelloWorldSceneAR extends Component {
               rotation={[-90, 0, 0]} // ---> working!
               position={[0, 0, 0]} // ---> working!
               // rotation={[-70, 0, 0]}
-              // position={[0, 0, 0]}
               ref={this._setARNodeRef.bind(this)}
               scale={[0.2, 0.2, 0.2]}
             />
@@ -49,7 +64,7 @@ export default class HelloWorldSceneAR extends Component {
           <ViroNode
             dragType="FixedToWorld"
             onDrag={this._onDrag.bind(this)}
-            onClick={this._onClick.bind(this)}
+            onClick={onClick()}
             onPinch={this._onPinch.bind(this)}
             scale={[0.6, 0.6, 0.6]}
           >
@@ -58,12 +73,11 @@ export default class HelloWorldSceneAR extends Component {
               width={1}
               placeholderSource={require('../images/victoria-station-1926.jpg')}
               source={require('../images/victoria-station-1926.jpg')}
-              rotation={[-10, 0, 15]} // ---> working!
+              rotation={[rotationX, rotationY, rotationZ]}
               position={[0, 2, 0]} // ---> working!
-              // rotation={[-70, 0, 0]}
-              // position={[0, 0, 0]}
               ref={this._setARNodeRef.bind(this)}
               scale={[1, 1, 1]}
+              opacity={opacity}
             />
           </ViroNode>
         </ViroARImageMarker>
@@ -92,15 +106,10 @@ export default class HelloWorldSceneAR extends Component {
     );
   }
 
-  _onInitialized(state, reason) {
-    if (state == ViroConstants.TRACKING_NORMAL) {
-      this.setState({
-        text: 'Hello Mate!'
-      });
-    } else if (state == ViroConstants.TRACKING_NONE) {
-      // Handle loss of tracking
-    }
-  }
+  // _onInitialized(state, reason) {
+  //   console.warn('onInitialized');
+  //   console.warn(rotationX, ' <--- rotationX');
+  // }
 
   _setARNodeRef(component) {
     this.arNodeRef = component;
@@ -114,12 +123,6 @@ export default class HelloWorldSceneAR extends Component {
         draggedToPosition[2]
       ]
     });
-  }
-
-  _onClick() {
-    console.warn(this.props, '<------ this.props down here!!');
-    console.warn(this.state.position);
-    console.warn('the position', this.state.position);
   }
 
   _onPinch(pinchState, scaleFactor, source) {
@@ -141,10 +144,10 @@ export default class HelloWorldSceneAR extends Component {
     //set scale using native props to reflect pinch.
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    console.warn('HelloWorldSceneAR.js UPDATING!');
-    console.warn(prevProps, ' ***');
-  }
+  // componentDidUpdate(prevProps, prevState, snapshot) {
+  //   console.warn('HelloWorldSceneAR.js UPDATING!');
+  //   console.warn(prevProps, ' ***');
+  // }
 }
 
 ViroARTrackingTargets.createTargets({
