@@ -19,7 +19,7 @@ export default class HelloWorldSceneAR extends Component {
   // Set initial state here
   state = {
     text: 'Initial...',
-    scale: [2.5, 2.5, 2.5],
+    // scale: [2.5, 2.5, 2.5],
     position: [0, 0, -1]
   };
 
@@ -28,7 +28,8 @@ export default class HelloWorldSceneAR extends Component {
       rotationX,
       rotationY,
       rotationZ,
-      opacity
+      opacity,
+      size
     } = this.props.arSceneNavigator.viroAppProps;
 
     const onClick = () => {
@@ -66,7 +67,7 @@ export default class HelloWorldSceneAR extends Component {
             // onDrag={this._onDrag.bind(this)}
             onDrag={() => {}}
             onClick={onClick()}
-            onPinch={this._onPinch.bind(this)}
+            // onPinch={this._onPinch.bind(this)}
             scale={[0.6, 0.6, 0.6]}
           >
             <ViroImage
@@ -77,7 +78,7 @@ export default class HelloWorldSceneAR extends Component {
               rotation={[rotationX, rotationY, rotationZ]}
               position={[0, 2, 0]} // ---> working!
               ref={this._setARNodeRef.bind(this)}
-              scale={[1, 1, 1]}
+              scale={[size, size, size]}
               opacity={opacity}
             />
           </ViroNode>
@@ -126,24 +127,24 @@ export default class HelloWorldSceneAR extends Component {
   //   });
   // }
 
-  _onPinch(pinchState, scaleFactor, source) {
-    let newScale = this.state.scale.map(vector => {
-      return vector * scaleFactor;
-    });
+  // _onPinch(pinchState, scaleFactor, source) {
+  //   let newScale = this.state.scale.map(vector => {
+  //     return vector * scaleFactor;
+  //   });
 
-    if (pinchState == 3) {
-      this.setState({
-        scale: newScale
-        // text: '!!!'
-        // scale: [2.5, 2.5, 2.5]
-      });
-      // update scale of obj by multiplying by scaleFactor  when pinch ends.
-      return;
-    }
+  //   if (pinchState == 3) {
+  //     this.setState({
+  //       scale: newScale
+  //       // text: '!!!'
+  //       // scale: [2.5, 2.5, 2.5]
+  //     });
+  //     // update scale of obj by multiplying by scaleFactor  when pinch ends.
+  //     return;
+  //   }
 
-    this.arNodeRef.setNativeProps({ scale: newScale });
-    //set scale using native props to reflect pinch.
-  }
+  //   this.arNodeRef.setNativeProps({ scale: newScale });
+  //   //set scale using native props to reflect pinch.
+  // }
 
   // componentDidUpdate(prevProps, prevState, snapshot) {
   //   console.warn('HelloWorldSceneAR.js UPDATING!');

@@ -24,7 +24,13 @@ var sharedProps = {
 export default class AR extends Component {
   state = {
     sharedProps: sharedProps,
-    viroAppProps: { rotationX: 0, rotationY: 0, rotationZ: 0, opacity: 1 },
+    viroAppProps: {
+      rotationX: 0,
+      rotationY: 0,
+      rotationZ: 0,
+      opacity: 1,
+      size: 0.25
+    },
     orientateStyle: styles.visible
   };
 
@@ -71,6 +77,25 @@ export default class AR extends Component {
             accessibilityLabel="Adjust the historical image orientation"
           /> */}
           <View style={this.state.orientateStyle}>
+            <Text>SIZE</Text>
+            <Slider
+              style={{ width: '100%', height: 40 }}
+              minimumValue={0}
+              maximumValue={10}
+              minimumTrackTintColor="#FFFFFF"
+              maximumTrackTintColor="#000000"
+              step={0.1}
+              onValueChange={value => {
+                this.setState(prevState => {
+                  return {
+                    viroAppProps: {
+                      ...prevState.viroAppProps,
+                      size: value
+                    }
+                  };
+                });
+              }}
+            />
             <Text>X</Text>
             <Slider
               style={{ width: '100%', height: 40 }}
