@@ -1,4 +1,4 @@
-#Tue Jul 16 17:41:17 BST 2019
+#Wed Jul 17 14:02:35 BST 2019
 base.2=/Users/samlea/Documents/Coding/Northcoders 2/Project-Phase/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/transforms/dexMerger/ar/debug/1
 base.1=/Users/samlea/Documents/Coding/Northcoders 2/Project-Phase/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/transforms/dexMerger/ar/debug/4
 base.0=/Users/samlea/Documents/Coding/Northcoders 2/Project-Phase/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/transforms/dexMerger/ar/debug/0

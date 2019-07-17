@@ -20,7 +20,7 @@ export default class HelloWorldSceneAR extends Component {
   state = {
     text: 'Initial...',
     scale: [2.5, 2.5, 2.5],
-    position: []
+    position: [0, 0, -1]
   };
 
   render() {
@@ -34,7 +34,7 @@ export default class HelloWorldSceneAR extends Component {
     const onClick = () => {
       console.warn('onClick-ing! inside the render');
       // console.warn(this.state.position);
-      console.warn('position:', this.state.position);
+      // console.warn('position:', this.state.position);
       console.warn('rotation:', [rotationX, rotationY, rotationZ]);
     };
 
@@ -63,7 +63,8 @@ export default class HelloWorldSceneAR extends Component {
           </ViroNode>
           <ViroNode
             dragType="FixedToWorld"
-            onDrag={this._onDrag.bind(this)}
+            // onDrag={this._onDrag.bind(this)}
+            onDrag={() => {}}
             onClick={onClick()}
             onPinch={this._onPinch.bind(this)}
             scale={[0.6, 0.6, 0.6]}
@@ -115,15 +116,15 @@ export default class HelloWorldSceneAR extends Component {
     this.arNodeRef = component;
   }
 
-  _onDrag(draggedToPosition, source) {
-    this.setState({
-      position: [
-        draggedToPosition[0],
-        draggedToPosition[1],
-        draggedToPosition[2]
-      ]
-    });
-  }
+  // _onDrag(draggedToPosition, source) {
+  //   this.setState({
+  //     position: [
+  //       draggedToPosition[0],
+  //       draggedToPosition[1],
+  //       draggedToPosition[2]
+  //     ]
+  //   });
+  // }
 
   _onPinch(pinchState, scaleFactor, source) {
     let newScale = this.state.scale.map(vector => {

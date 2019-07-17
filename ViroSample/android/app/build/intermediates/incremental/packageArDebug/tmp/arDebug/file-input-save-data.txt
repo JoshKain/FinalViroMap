@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Jul 16 17:41:17 BST 2019
+#Wed Jul 17 14:02:37 BST 2019
 124.path=lib/armeabi-v7a/libLinearMath.so
 60.set=NATIVE_RESOURCE
 52.set=NATIVE_RESOURCE
