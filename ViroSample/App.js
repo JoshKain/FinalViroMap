@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from "react";
 import {
   AppRegistry,
   Text,
@@ -8,30 +8,28 @@ import {
   TouchableHighlight,
   Button,
   ImageBackground
-} from 'react-native';
+} from "react-native";
 
-import Login from './components/Login'
-import SignUp from './components/Signup';
-import HomePage from './components/Home';
+import Login from "./components/Login";
+import SignUp from "./components/Signup";
+import HomePage from "./components/Home";
 
-import { ViroARSceneNavigator } from 'react-viro';
-import Maps from './components/Maps';
-
-
+import { ViroARSceneNavigator } from "react-viro";
+import Maps from "./components/Maps";
 
 var sharedProps = {
-  apiKey: '2DF60EAD-EC00-4D0A-83DA-96E20F6E3352'
+  apiKey: "2DF60EAD-EC00-4D0A-83DA-96E20F6E3352"
 };
 
 // Sets the default scene you want for AR and VR
-var InitialARScene = require('./js/HelloWorldSceneAR');
+var InitialARScene = require("./js/HelloWorldSceneAR");
 
-var UNSET = 'UNSET';
-var HOME_NAVIGATOR_TYPE = 'HOME';
-var AR_NAVIGATOR_TYPE = 'AR';
-var MAPS_NAVIGATOR_TYPE = 'MAPs';
-var HOMEPAGE_NAVIGATOR_TYPE = 'HOMEPAGE'
-var MAPS_WITH_COORDS = 'MAPCOORDS'
+var UNSET = "UNSET";
+var HOME_NAVIGATOR_TYPE = "HOME";
+var AR_NAVIGATOR_TYPE = "AR";
+var MAPS_NAVIGATOR_TYPE = "MAPs";
+var HOMEPAGE_NAVIGATOR_TYPE = "HOMEPAGE";
+var MAPS_WITH_COORDS = "MAPCOORDS";
 
 // This determines which type of experience to launch in, or UNSET, if the user should
 // be presented with a choice of AR or VR. By default, we offer the user a choice.
@@ -48,7 +46,6 @@ export default class ViroSample extends Component {
       loginBool: false,
       place: false,
       homeBool: false
-
     };
 
     this._getExperienceSelector = this._getExperienceSelector.bind(this);
@@ -62,34 +59,29 @@ export default class ViroSample extends Component {
     // this.onBack = this.onBack.bind(this);
   }
 
+  addNinja = ninja => {};
 
-  addNinja = ninja => { };
-
-  changeStateBool = (bool) => {
-    this.setState({ loginBool: bool })
-  }
+  changeStateBool = bool => {
+    this.setState({ loginBool: bool });
+  };
 
   // Replace this function with the contents of _getVRNavigator() or _getARNavigator()
   // if you are building a specific type of experience.
   render() {
-
+    console.warn("hello");
     if (this.state.navigatorType == UNSET) {
       return this._getExperienceSelector();
     } else if (this.state.navigatorType == MAPS_NAVIGATOR_TYPE) {
       return this._getMapsNavigator(this.state.place);
     } else if (this.state.navigatorType == AR_NAVIGATOR_TYPE) {
       return this._getARNavigator();
-    }
-    else if (this.state.navigatorType == HOME_NAVIGATOR_TYPE) {
+    } else if (this.state.navigatorType == HOME_NAVIGATOR_TYPE) {
       return this._getHomeNavigator();
-    }
-    else if (this.state.navigatorType == HOMEPAGE_NAVIGATOR_TYPE) {
+    } else if (this.state.navigatorType == HOMEPAGE_NAVIGATOR_TYPE) {
       return this._getHomePageNavigator();
-    }
-    else if (this.state.navigatorType == MAPS_WITH_COORDS) {
+    } else if (this.state.navigatorType == MAPS_WITH_COORDS) {
       return this._getMapsCoordsNavigator();
     }
-
   }
 
   // Presents the user with a choice of an AR or VR experience
@@ -101,12 +93,12 @@ export default class ViroSample extends Component {
             <View style={localStyles.inner}>
               <Text style={localStyles.titleText}>
                 Choose your desired experience:
-          </Text>
+              </Text>
 
               <TouchableHighlight
                 style={localStyles.buttons}
                 onPress={this._getExperienceButtonOnPress(AR_NAVIGATOR_TYPE)}
-                underlayColor={'#68a0ff'}
+                underlayColor={"#68a0ff"}
               >
                 <Text style={localStyles.buttonText}>THIS USED TO BE AR</Text>
               </TouchableHighlight>
@@ -114,7 +106,7 @@ export default class ViroSample extends Component {
               <TouchableHighlight
                 style={localStyles.buttons}
                 onPress={this._getExperienceButtonOnPress(MAPS_NAVIGATOR_TYPE)}
-                underlayColor={'#FF0000'}
+                underlayColor={"#FF0000"}
               >
                 <Text style={localStyles.buttonText}>THIS USED TO BE MAP</Text>
               </TouchableHighlight>
@@ -122,14 +114,17 @@ export default class ViroSample extends Component {
           </View>
         </View>
         <View>
-          {this.state.loginBool === false &&
-            <Login changeStateBool={this.changeStateBool} _getExperienceButtonOnPress={this._getExperienceButtonOnPress(HOME_NAVIGATOR_TYPE)} />
-          }
-          {this.state.loginBool &&
+          {this.state.loginBool === false && (
+            <Login
+              changeStateBool={this.changeStateBool}
+              _getExperienceButtonOnPress={this._getExperienceButtonOnPress}
+              _getMapWithCoords={this._getMapWithCoords}
+            />
+          )}
+          {this.state.loginBool && (
             <SignUp changeStateBool={this.changeStateBool} />
-          }
+          )}
         </View>
-
       </Fragment>
     );
   }
@@ -159,63 +154,59 @@ export default class ViroSample extends Component {
   // This function returns an anonymous/lambda function to be used
   // by the experience selector buttons
   _getExperienceButtonOnPress(navigatorType) {
-
     return () => {
-
       this.setState({
-
-        navigatorType: navigatorType,
-
-      })
-    }
+        navigatorType: navigatorType
+      });
+    };
   }
 
   _getMapWithCoords(a, place) {
-    console.warn(a, "mappcords")
+    console.warn(a, "mappcords");
     console.warn(place, "insidegetmapwithcoords");
 
-
     return () => {
-      console.warn("return check")
-      console.warn(a, "mapcords inside return")
+      console.warn("return check");
+      console.warn(a, "mapcords inside return");
       console.log(place, "should be card inside return");
 
       setTimeout(() => {
-        this.setState({
-          navigatorType: a,
-          place: place
-        }, () => {
-          console.warn(this.state.navigatorType, this.state.place, "ghghhgh")
-        })
-
+        this.setState(
+          {
+            navigatorType: a,
+            place: place
+          },
+          () => {
+            console.warn(this.state.navigatorType, this.state.place, "ghghhgh");
+          }
+        );
       }, 4 * 300);
-
-    }
+    };
   }
 
-
-
-
   _getMapsNavigator() {
-
-
     return (
       <Maps
-        getExperienceButtonOnPress={this._getExperienceButtonOnPress(HOME_NAVIGATOR_TYPE)}
+        getExperienceButtonOnPress={this._getExperienceButtonOnPress(
+          HOME_NAVIGATOR_TYPE
+        )}
+        _getExperienceButtonOnPress={this._getExperienceButtonOnPress}
+        _getMapWithCoords={this._getMapWithCoords}
       />
-    )
-
+    );
   }
 
   _getMapsCoordsNavigator() {
-
-
     return (
-      <Maps getExperienceButtonOnPress={this._getExperienceButtonOnPress(HOME_NAVIGATOR_TYPE)}
+      <Maps
+        getExperienceButtonOnPress={this._getExperienceButtonOnPress(
+          HOME_NAVIGATOR_TYPE
+        )}
+        _getExperienceButtonOnPress={this._getExperienceButtonOnPress}
+        _getMapWithCoords={this._getMapWithCoords}
         place={this.state.place}
       />
-    )
-
+    );
   }
 
   // _getHomeNavigatorcurrentlynotinuse() {
@@ -236,41 +227,40 @@ export default class ViroSample extends Component {
   _getHomeNavigator() {
     return (
       <View>
-        <ImageBackground source={require("./components/background.png")} style={{ width: '100%', height: '100%' }}>
+        <ImageBackground
+          source={require("./components/background.png")}
+          style={{ width: "100%", height: "100%" }}
+        >
           <TouchableHighlight
             style={localStyles.buttonstyle}
             onPress={this._getExperienceButtonOnPress(HOMEPAGE_NAVIGATOR_TYPE)}
-            underlayColor={'#FF0000'}
+            underlayColor={"#FF0000"}
           >
             <Text style={localStyles.text}>HOME PAGE</Text>
           </TouchableHighlight>
           <TouchableHighlight
             style={localStyles.buttonstyle}
             onPress={this._getExperienceButtonOnPress(MAPS_NAVIGATOR_TYPE)}
-            underlayColor={'#FF0000'}
+            underlayColor={"#FF0000"}
           >
             <Text style={localStyles.text}>MAPS</Text>
           </TouchableHighlight>
         </ImageBackground>
-
-      </View >
-    )
+      </View>
+    );
   }
   _getHomePageNavigator() {
-
     return (
       <View>
         <HomePage
-          getExperienceButtonOnPress={this._getExperienceButtonOnPress(HOME_NAVIGATOR_TYPE)
-          }
+          getExperienceButtonOnPress={this._getExperienceButtonOnPress(
+            HOME_NAVIGATOR_TYPE
+          )}
           getMapWithCoords={this._getMapWithCoords}
-
-
         />
       </View>
-    )
+    );
   }
-
 
   // This function "exits" Viro by setting the navigatorType to UNSET.
   _exitViro() {
@@ -283,30 +273,30 @@ export default class ViroSample extends Component {
 var localStyles = StyleSheet.create({
   viroContainer: {
     flex: 1,
-    backgroundColor: 'black'
+    backgroundColor: "black"
   },
   outer: {
     flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'white'
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "white"
   },
   inner: {
     flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'black'
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "black"
   },
   titleText: {
     paddingTop: 30,
     paddingBottom: 20,
-    color: '#fff',
-    textAlign: 'center',
+    color: "#fff",
+    textAlign: "center",
     fontSize: 25
   },
   buttonText: {
-    color: '#fff',
-    textAlign: 'center',
+    color: "#fff",
+    textAlign: "center",
     fontSize: 20
   },
   buttons: {
@@ -316,10 +306,10 @@ var localStyles = StyleSheet.create({
     paddingBottom: 20,
     marginTop: 10,
     marginBottom: 10,
-    backgroundColor: '#68a0cf',
+    backgroundColor: "#68a0cf",
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#fff'
+    borderColor: "#fff"
   },
   exitButton: {
     height: 50,
@@ -328,31 +318,29 @@ var localStyles = StyleSheet.create({
     paddingBottom: 10,
     marginTop: 10,
     marginBottom: 10,
-    backgroundColor: '#68a0cf',
+    backgroundColor: "#68a0cf",
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#fff'
+    borderColor: "#fff"
   },
   buttonstyle: {
-
     marginTop: 10,
     paddingTop: 8,
     paddingBottom: 8,
     marginLeft: 30,
     marginRight: 30,
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff",
     borderRadius: 10,
-    borderWidth: 1,
-
+    borderWidth: 1
   },
   text: {
-    alignSelf: 'center',
-    color: 'black',
+    alignSelf: "center",
+    color: "black",
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
     paddingTop: 5,
     paddingBottom: 5,
-    backgroundColor: '#ffffff'
+    backgroundColor: "#ffffff"
   }
 });
 

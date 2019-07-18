@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/tuskem/Desktop/componentsforapp/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-id/values-id.xml",
+            "outputFile": "/home/joshkain/yesteryeAR/yesteryeAR-1.0/Matts-new-version/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-id/values-id.xml",
             "map": [
                 {
-                    "source": "/home/tuskem/.gradle/caches/transforms-1/files-1.1/sdk-common-1.180.0.aar/6f1655d150e9ca00716a74b6fee3192b/res/values-id/values.xml",
+                    "source": "/home/joshkain/.gradle/caches/transforms-1/files-1.1/sdk-common-1.180.0.aar/2a54279001f4644f82e5d8e7c21df550/res/values-id/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/tuskem/.gradle/caches/transforms-1/files-1.1/core-1.7.0.aar/4b1b440b64d7c56e017a6df076ae0438/res/values-id/values.xml",
+                    "source": "/home/joshkain/.gradle/caches/transforms-1/files-1.1/core-1.7.0.aar/e8a71e45290b1bab1954f47c6be4268d/res/values-id/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",

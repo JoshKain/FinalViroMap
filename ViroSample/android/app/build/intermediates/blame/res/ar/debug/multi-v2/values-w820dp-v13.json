@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/tuskem/Desktop/componentsforapp/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "outputFile": "/home/joshkain/yesteryeAR/yesteryeAR-1.0/Matts-new-version/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/tuskem/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/cebc3c5943833056b3875ad87e5c376c/res/values-w820dp-v13/values-w820dp-v13.xml",
+                    "source": "/home/joshkain/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/20a2275701c0d676f0a0aabd8b8f70ec/res/values-w820dp-v13/values-w820dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

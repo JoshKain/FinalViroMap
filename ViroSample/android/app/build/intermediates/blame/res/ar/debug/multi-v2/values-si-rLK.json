@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/tuskem/Desktop/componentsforapp/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-si-rLK/values-si-rLK.xml",
+            "outputFile": "/home/joshkain/yesteryeAR/yesteryeAR-1.0/Matts-new-version/yesteryeAR-1.0/ViroSample/android/app/build/intermediates/incremental/mergeArDebugResources/merged.dir/values-si-rLK/values-si-rLK.xml",
             "map": [
                 {
-                    "source": "/home/tuskem/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.7.1.aar/37ec7eb72c360a2a0e6e19a4e8fb37eb/res/values-si-rLK/values-si-rLK.xml",
+                    "source": "/home/joshkain/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.7.1.aar/cc0f880d011f0eee0b3f4bdb5c50b57f/res/values-si-rLK/values-si-rLK.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
