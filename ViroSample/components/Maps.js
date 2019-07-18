@@ -9,7 +9,8 @@ import {
   TouchableHighlight,
   Vibration,
   Image,
-  Linking
+  Linking,
+  TouchableOpacity
 } from "react-native";
 import PlaceInfo from "./PlaceInfo";
 import Home from "./Home";
@@ -103,7 +104,6 @@ export default class Maps extends Component {
   // };
 
   render() {
-    console.warn(this.state);
     const piccadilly = {
       latitude: 53.481,
       longitude: -2.2369,
@@ -266,13 +266,14 @@ export default class Maps extends Component {
           </MapView>
         )}
         {this.state.isPopupTrue && (
-          <Button
+          <TouchableOpacity
+            style={styles.buttonstyle}
             // onPress={this.handlePress}
             onPress={this.backhome2}
-            title="home"
-            color={this.state.color}
             accessibilityLabel="Navigate back a page"
-          />
+          >
+            <Text style={styles.text}>Home</Text>
+          </TouchableOpacity>
         )}
         {!this.state.isPopupTrue && (
           <View>
@@ -308,5 +309,22 @@ const styles = StyleSheet.create({
   },
   mapView: {
     ...StyleSheet.absoluteFillObject
+  },
+  buttonstyle: {
+    paddingTop: 8,
+    paddingBottom: 8,
+
+    backgroundColor: "#ffffff",
+    borderRadius: 10,
+    borderWidth: 1
+  },
+  text: {
+    alignSelf: "center",
+    color: "black",
+    fontSize: 16,
+    fontWeight: "600",
+    paddingTop: 5,
+    paddingBottom: 5,
+    backgroundColor: "#ffffff"
   }
 });

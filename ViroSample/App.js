@@ -68,7 +68,6 @@ export default class ViroSample extends Component {
   // Replace this function with the contents of _getVRNavigator() or _getARNavigator()
   // if you are building a specific type of experience.
   render() {
-    console.warn("hello");
     if (this.state.navigatorType == UNSET) {
       return this._getExperienceSelector();
     } else if (this.state.navigatorType == MAPS_NAVIGATOR_TYPE) {
@@ -162,24 +161,12 @@ export default class ViroSample extends Component {
   }
 
   _getMapWithCoords(a, place) {
-    console.warn(a, "mappcords");
-    console.warn(place, "insidegetmapwithcoords");
-
     return () => {
-      console.warn("return check");
-      console.warn(a, "mapcords inside return");
-      console.log(place, "should be card inside return");
-
       setTimeout(() => {
-        this.setState(
-          {
-            navigatorType: a,
-            place: place
-          },
-          () => {
-            console.warn(this.state.navigatorType, this.state.place, "ghghhgh");
-          }
-        );
+        this.setState({
+          navigatorType: a,
+          place: place
+        });
       }, 4 * 300);
     };
   }
@@ -227,25 +214,12 @@ export default class ViroSample extends Component {
   _getHomeNavigator() {
     return (
       <View>
-        <ImageBackground
-          source={require("./components/background.png")}
-          style={{ width: "100%", height: "100%" }}
-        >
-          <TouchableHighlight
-            style={localStyles.buttonstyle}
-            onPress={this._getExperienceButtonOnPress(HOMEPAGE_NAVIGATOR_TYPE)}
-            underlayColor={"#FF0000"}
-          >
-            <Text style={localStyles.text}>HOME PAGE</Text>
-          </TouchableHighlight>
-          <TouchableHighlight
-            style={localStyles.buttonstyle}
-            onPress={this._getExperienceButtonOnPress(MAPS_NAVIGATOR_TYPE)}
-            underlayColor={"#FF0000"}
-          >
-            <Text style={localStyles.text}>MAPS</Text>
-          </TouchableHighlight>
-        </ImageBackground>
+        <HomePage
+          getExperienceButtonOnPress={this._getExperienceButtonOnPress(
+            HOME_NAVIGATOR_TYPE
+          )}
+          getMapWithCoords={this._getMapWithCoords}
+        />
       </View>
     );
   }

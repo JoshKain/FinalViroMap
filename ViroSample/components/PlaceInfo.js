@@ -48,13 +48,12 @@ export default class PlaceInfo extends Component {
                   style={{ width: 360, height: 250 }}
                 />
                 <Text style={{ fontSize: 30 }}>{this.props.info.title}</Text>
-                <Text style={{ fontSize: 15 }}>
-                  Visitors: {names[0]}, {names[1]}, {this.state.person}{" "}
-                </Text>
+
                 <Text style={{ fontSize: 20 }}>
                   {"\n"}Quite a different affair when compared to the bustling
                   array of bus and tram stops today...{" "}
                 </Text>
+                <Text>24/2/1951</Text>
               </View>
             )}
             {this.props.info.url === "Strangeways" && (
@@ -65,14 +64,13 @@ export default class PlaceInfo extends Component {
                   style={{ width: 360, height: 150 }}
                 />
                 <Text style={{ fontSize: 30 }}>{this.props.info.title}</Text>
-                <Text style={{ fontSize: 15 }}>
-                  Visitors: {names[0]}, {names[1]}, {this.state.person}{" "}
-                </Text>
+
                 <Text style={{ fontSize: 20 }}>
                   {"\n"}Assize Courts in the Strangeways district, once the
                   tallest building in Manchester. Destroyed in the Blitz in
                   1940, Strangeways Prison standing in its place.{" "}
                 </Text>
+                <Text>24/2/1952</Text>
               </View>
             )}
             {this.props.info.url === "hulme" && (
@@ -83,14 +81,13 @@ export default class PlaceInfo extends Component {
                   style={{ width: 360, height: 150 }}
                 />
                 <Text style={{ fontSize: 30 }}>{this.props.info.title}</Text>
-                <Text style={{ fontSize: 15 }}>
-                  Visitors: {names[0]}, {names[1]}, {this.state.person}{" "}
-                </Text>
+
                 <Text style={{ fontSize: 20 }}>
                   {"\n"}The scene of Paulden's fire on Cavendish Street in
                   Hulme, Manchester in 1957. Now Opal Halls, student
                   accomodation for MMU{" "}
                 </Text>
+                <Text>Date Taken: 20/8/1957</Text>
               </View>
             )}
             {this.props.info.url === "victoria" && (
@@ -101,12 +98,11 @@ export default class PlaceInfo extends Component {
                   style={{ width: 360, height: 250 }}
                 />
                 <Text style={{ fontSize: 30 }}>{this.props.info.title}</Text>
-                <Text style={{ fontSize: 15 }}>
-                  Visitors: {names[0]}, {names[1]}, {this.state.person}{" "}
-                </Text>
+
                 <Text style={{ fontSize: 20 }}>
                   {"\n"}Quarter to Nine, feeling fine. Victoria station.
                 </Text>
+                <Text>Date Taken: 24/2/1949</Text>
               </View>
             )}
             {this.props.info.url === "mancoats" && (
@@ -117,15 +113,15 @@ export default class PlaceInfo extends Component {
                   style={{ width: 360, height: 250 }}
                 />
                 <Text style={{ fontSize: 30 }}>{this.props.info.title}</Text>
-                <Text style={{ fontSize: 15 }}>
-                  Visitors: {names[0]}, {names[1]}, {this.state.person}{" "}
-                </Text>
+
                 <Text style={{ fontSize: 20 }}>
                   {"\n"}A man, in Manc, wearing a coat, walking in Ancoats..
                   Mancoats! - Jersey Street
                 </Text>
+                <Text>Date Taken: 20/5/1952</Text>
               </View>
             )}
+
             <View
               style={{
                 flex: 1,
@@ -153,6 +149,20 @@ export default class PlaceInfo extends Component {
                                 {names[0]}{"\n"}
                                 {names[1]}</Text> */}
             </View>
+          </View>
+          <View style={styles.visits}>
+            <Text
+              style={{
+                fontWeight: "bold",
+                borderBottomWidth: 1,
+                borderBottomColor: "black"
+              }}
+            >
+              Visitors
+            </Text>
+            <Text>
+              {names[0]} {"\n"} {names[1]} {"\n"} {this.state.person}{" "}
+            </Text>
           </View>
           <View style={styles.navbar}>
             <TouchableNativeFeedback
@@ -206,6 +216,11 @@ const styles = StyleSheet.create({
   navbar: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 550
+    marginTop: 100
+  },
+  visits: {
+    fontSize: 15,
+    marginTop: 400,
+    alignItems: "center"
   }
 });

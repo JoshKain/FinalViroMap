@@ -61,69 +61,64 @@ export default class Login extends Component {
             source={require("./background.png")}
             style={styles.background}
           >
+            <View style={styles.image}>
+              <Image source={require("./YYLogo.png")} style={styles.logo} />
+            </View>
             <View>
-              <View style={styles.image}>
-                <Image source={require("./yes1.png")} style={styles.logo} />
-              </View>
-              <View>
-                {!this.state.renderMap && (
-                  <View style={styles.container}>
-                    <Image
-                      source={require("./safety.png")}
-                      style={styles.safe}
+              {!this.state.renderMap && (
+                <View style={styles.container}>
+                  <Image source={require("./safety.png")} style={styles.safe} />
+                  <View style={styles.containerform}>
+                    <Text style={styles.formtext}>Username</Text>
+                    <TextInput
+                      placeholder="UserName ..."
+                      placeholderTextColor="white"
+                      onChangeText={username =>
+                        this.setState({ username, correctInput: true })
+                      }
+                      value={this.state.username}
+                      style={styles.form}
                     />
-                    <View style={styles.containerform}>
-                      <Text style={styles.formtext}>Username</Text>
-                      <TextInput
-                        placeholder="UserName ..."
-                        placeholderTextColor="white"
-                        onChangeText={username =>
-                          this.setState({ username, correctInput: true })
-                        }
-                        value={this.state.username}
-                        style={styles.form}
-                      />
-                      <Text style={styles.formtext}>Password</Text>
-                      <TextInput
-                        placeholder="Password ..."
-                        secureTextEntry={this.state.hidden}
-                        placeholderTextColor="white"
-                        onChangeText={password =>
-                          this.setState({ password, correctInput: true })
-                        }
-                        style={styles.form}
-                        value={this.state.password}
-                      />
-                      {!this.state.correctInput && (
-                        <Text style={styles.error}>
-                          Incorrect password or username
-                        </Text>
-                      )}
-                    </View>
-                    <View style={{ marginBottom: 2 }}>
-                      <TouchableOpacity
-                        style={styles.buttonstyle}
-                        activeOpacity={0.5}
-                        onPress={() => {
-                          const value = {
-                            username: this.state.username,
-                            password: this.state.password
-                          };
-                          this.handleLogin(value, myData);
-                        }}
-                      >
-                        <Text style={styles.text}>Login</Text>
-                      </TouchableOpacity>
-                      <TouchableOpacity
-                        style={styles.buttonstyle}
-                        onPress={this.handleSubmit}
-                      >
-                        <Text style={styles.text}>Sign-up </Text>
-                      </TouchableOpacity>
-                    </View>
+                    <Text style={styles.formtext}>Password</Text>
+                    <TextInput
+                      placeholder="Password ..."
+                      secureTextEntry={this.state.hidden}
+                      placeholderTextColor="white"
+                      onChangeText={password =>
+                        this.setState({ password, correctInput: true })
+                      }
+                      style={styles.form}
+                      value={this.state.password}
+                    />
+                    {!this.state.correctInput && (
+                      <Text style={styles.error}>
+                        Incorrect password or username
+                      </Text>
+                    )}
                   </View>
-                )}
-              </View>
+                  <View style={{ marginBottom: 2 }}>
+                    <TouchableOpacity
+                      style={styles.buttonstyle}
+                      activeOpacity={0.5}
+                      onPress={() => {
+                        const value = {
+                          username: this.state.username,
+                          password: this.state.password
+                        };
+                        this.handleLogin(value, myData);
+                      }}
+                    >
+                      <Text style={styles.text}>Login</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                      style={styles.buttonstyle}
+                      onPress={this.handleSubmit}
+                    >
+                      <Text style={styles.text}>Sign-up </Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              )}
             </View>
           </ImageBackground>
         )}
@@ -135,21 +130,19 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
-    marginTop: 120,
-    padding: 20,
+
     borderRadius: 50,
     opacity: 30
   },
   logo: {
     justifyContent: "center",
     alignSelf: "center",
-    width: 350,
-    height: 140,
-    marginTop: 5,
-    borderRadius: 80
+    width: "45%",
+    height: "45%"
   },
   image: {
-    flexDirection: "column"
+    flexDirection: "column",
+    backgroundColor: "white"
   },
   background: {
     width: "100%",

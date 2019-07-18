@@ -17,8 +17,8 @@ import Login from "./Login";
 const styles = StyleSheet.create({
   title: {
     color: "black",
-    textAlign: "center",
-    fontSize: 20,
+    justifyContent: "center",
+    fontSize: 15,
     backgroundColor: "white"
   },
   alternativeLayoutButtonContainer: {
@@ -60,14 +60,19 @@ const styles = StyleSheet.create({
   },
   scroll: {
     paddingBottom: 5,
-    padding: 10
+    padding: 10,
+    borderWidth: 5
   },
   border: {
-    borderBottomWidth: 160,
     borderColor: "white"
+  },
+  title2: {
+    padding: 5,
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "black"
   }
 });
-
 export default class Homepage extends Component {
   state = {
     UserPage: false,
@@ -82,7 +87,6 @@ export default class Homepage extends Component {
     };
     const x = this.props._getMapWithCoords("MAPCOORDS", obj);
     if (!this.props.resetState) {
-      console.warn(x);
       return (
         <TouchableOpacity onPress={x()}>
           <Image
@@ -111,7 +115,6 @@ export default class Homepage extends Component {
     };
     const x = this.props._getMapWithCoords("MAPCOORDS", obj);
     if (!this.props.resetState) {
-      console.warn(x);
       return (
         <TouchableOpacity onPress={x()}>
           <Image
@@ -139,7 +142,6 @@ export default class Homepage extends Component {
     };
     const x = this.props._getMapWithCoords("MAPCOORDS", obj);
     if (!this.props.resetState) {
-      console.warn(x);
       return (
         <TouchableOpacity onPress={x()}>
           <Image
@@ -169,7 +171,6 @@ export default class Homepage extends Component {
 
     const x = this.props._getMapWithCoords("MAPCOORDS", obj);
     if (!this.props.resetState) {
-      console.warn(x);
       return (
         <TouchableOpacity onPress={x()}>
           <Image
@@ -223,35 +224,38 @@ export default class Homepage extends Component {
                   this.props._getExperienceButtonOnPress
                 }
                 _getMapWithCoords={this.props._getMapWithCoords}
+                resetState={this.resetState}
               />
             </View>
           )}
           {!this.state.UserPage && !this.state.login && (
             <View>
-              <View style={styles.navbar}>
-                <TouchableOpacity onPress={this.backtoLogin}>
-                  <Image
-                    style={{ width: 50, height: 50 }}
-                    source={require("./back.png")}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={this.userPage}>
-                  <Image
-                    ref="USER_PAGE"
-                    style={{ width: 50, height: 50 }}
-                    source={require("./image.png")}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={this.props._getExperienceButtonOnPress("MAPs")}
-                >
-                  <Image
-                    style={{ width: 50, height: 50 }}
-                    source={require("./nav.png")}
-                  />
-                </TouchableOpacity>
-              </View>
               <ScrollView style={styles.scroll}>
+                <View style={styles.navbar}>
+                  <TouchableOpacity onPress={this.backtoLogin}>
+                    <Image
+                      style={{ width: 50, height: 50 }}
+                      source={require("./back.png")}
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={this.userPage}>
+                    <Image
+                      ref="USER_PAGE"
+                      style={{ width: 50, height: 50 }}
+                      source={require("./image.png")}
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={this.props._getExperienceButtonOnPress("MAPs")}
+                  >
+                    <Image
+                      style={{ width: 50, height: 50 }}
+                      source={require("./nav.png")}
+                    />
+                  </TouchableOpacity>
+                </View>
+
+                <Text style={styles.title2}>Locations Near You</Text>
                 <View style={styles.border}>
                   <View>
                     <TouchableOpacity
@@ -264,7 +268,7 @@ export default class Homepage extends Component {
                         style={{ width: 400, height: 200 }}
                       >
                         <Text style={styles.title}>
-                          Manchester Assize Courts
+                          Manchester Assize Courts, 1946
                         </Text>
                       </ImageBackground>
                     </TouchableOpacity>
@@ -277,7 +281,7 @@ export default class Homepage extends Component {
                         source={require("./victoria.jpg")}
                         style={{ width: 400, height: 200 }}
                       >
-                        <Text style={styles.title}>Victoria Station</Text>
+                        <Text style={styles.title}>Victoria Station, 1948</Text>
                       </ImageBackground>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -289,7 +293,7 @@ export default class Homepage extends Component {
                         source={require("./hulmefire.jpg")}
                         style={{ width: 400, height: 200 }}
                       >
-                        <Text style={styles.title}>Opal Halls MMU</Text>
+                        <Text style={styles.title}>Opal Halls MMU, 1957</Text>
                       </ImageBackground>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -301,7 +305,9 @@ export default class Homepage extends Component {
                         source={require("./piccadilly.jpg")}
                         style={{ width: 400, height: 200 }}
                       >
-                        <Text style={styles.title}>Picadilly Gardens</Text>
+                        <Text style={styles.title}>
+                          Picadilly Gardens, 1962
+                        </Text>
                       </ImageBackground>
                     </TouchableOpacity>
                   </View>

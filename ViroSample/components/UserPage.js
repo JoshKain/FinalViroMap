@@ -56,7 +56,54 @@ class UserPage extends Component {
   backtoLogin = event => {
     this.setState({ login: true });
   };
+
   render() {
+    if (!this.props.resetState) {
+      return (
+        <View>
+          {this.state.login && (
+            <View>
+              <Login
+                _getExperienceButtonOnPress={
+                  this.props._getExperienceButtonOnPress
+                }
+                _getMapWithCoords={this.props._getMapWithCoords}
+              />
+            </View>
+          )}
+          {!this.state.login && (
+            <View>
+              <View style={styles.navbar}>
+                <TouchableOpacity onPress={this.props.backhome}>
+                  <Image
+                    style={{ width: 50, height: 50 }}
+                    source={require("./back.png")}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this.backtoLogin}>
+                  <Image
+                    style={{ width: 50, height: 50 }}
+                    source={require("./logout.png")}
+                  />
+                  <Text>Log Out</Text>
+                </TouchableOpacity>
+              </View>
+              <Image
+                style={styles.imageProfile}
+                source={require("./Profile-ICon.png")}
+              />
+              <Text style={styles.textName}>William Wallace</Text>
+              <Text style={styles.textEmail}>WilliamWallace@live.com</Text>
+              <Text style={styles.textEmail}>Locations visted: 3</Text>
+              <Image
+                style={styles.ImageCog}
+                source={require("./settings.png")}
+              />
+            </View>
+          )}
+        </View>
+      );
+    } else this.props.resetState();
     return (
       <View>
         {this.state.login && (
@@ -90,8 +137,8 @@ class UserPage extends Component {
               style={styles.imageProfile}
               source={require("./Profile-ICon.png")}
             />
-            <Text style={styles.textName}>Josh Kain</Text>
-            <Text style={styles.textEmail}>joshkain@live.com</Text>
+            <Text style={styles.textName}>William Wallace</Text>
+            <Text style={styles.textEmail}>WilliamWallace@live.com</Text>
             <Text style={styles.textEmail}>Locations visted: 3</Text>
             <Image style={styles.ImageCog} source={require("./settings.png")} />
           </View>
