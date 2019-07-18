@@ -45,7 +45,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         {this.state.home && (
           <View>
             <Home
@@ -62,7 +62,7 @@ export default class Login extends Component {
             style={styles.background}
           >
             <View style={styles.image}>
-              <Image source={require("./YYLogo.png")} style={styles.logo} />
+              <Image source={require("./YYL75.png")} style={styles.logo} />
             </View>
             <View>
               {!this.state.renderMap && (
@@ -130,19 +130,17 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
-
     borderRadius: 50,
     opacity: 30
   },
   logo: {
     justifyContent: "center",
     alignSelf: "center",
-    width: "45%",
-    height: "45%"
+    width: "62%",
+    height: "62%"
   },
   image: {
-    flexDirection: "column",
-    backgroundColor: "white"
+    flexDirection: "column"
   },
   background: {
     width: "100%",
@@ -179,13 +177,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "black",
     marginTop: 10,
-
     fontWeight: "900"
   },
   containerform: {
     borderRadius: 20,
     backgroundColor: "white",
-    padding: 10
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "black"
   },
   error: {
     color: "black"
@@ -195,8 +194,14 @@ const styles = StyleSheet.create({
   },
   safe: {
     justifyContent: "flex-end",
-    alignSelf: "flex-end",
-    width: 100,
-    height: 20
+    alignSelf: "center",
+    width: 150,
+    height: 40,
+    borderRadius: 10,
+    margin: 10,
+    borderWidth: 1,
+    borderColor: "black"
+    // borderTopLeftRadius: 10,
+    // borderTopRightRadius: 10
   }
 });
