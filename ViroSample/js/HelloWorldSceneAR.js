@@ -19,86 +19,105 @@ export default class HelloWorldSceneAR extends Component {
   // Set initial state here
   state = {
     text: 'Initial...',
-    // scale: [2.5, 2.5, 2.5],
-    position: [0, 0, -1]
+    position: [0, 0, -1],
+    scanMsgVisible: true,
+    // scanMsgStyle: styles.scanMsgVisible, // becomes scanMsgHidden
+    frameVisible: styles.visible,
+    lookUpMsgVisible: styles.visible, // .hidden at start
+    welcomeMsgVisible: styles.visible, // .hidden at start
+    flashBorderVisible: styles.visible // .hidden at start
   };
+
+  // _anchorFound = () => {
+  //   console.warn('* ANCHOR FOUND! *');
+  //   this.setState({
+  //     scanMsgStyle: styles.scanMsgHidden
+  //   });
+  // };
 
   render() {
     const {
+      position,
       rotationX,
       rotationY,
       rotationZ,
       opacity,
-      size
-    } = this.props.arSceneNavigator.viroAppProps;
+      size,
+      getPosition
+    } = this.props.arSceneNavigator.viroAppProps[0];
 
-    const onClick = () => {
-      console.warn('onClick-ing! inside the render');
-      // console.warn(this.state.position);
-      // console.warn('position:', this.state.position);
-      console.warn('rotation:', [rotationX, rotationY, rotationZ]);
+    const _passDowner = this.props.arSceneNavigator.viroAppProps[2];
+
+    const anchorFound = () => {
+      console.warn('* ANCHOR FOUND! *');
+      this.setState({
+        scanMsgStyle: styles.scanMsgHidden
+      });
+      _passDowner();
+    };
+
+    const onDrag = (draggedToPosition, source) => {
+      // console.warn('reaching onDrag in render');
+
+      this.setState(
+        {
+          position: [
+            draggedToPosition[0],
+            draggedToPosition[1],
+            draggedToPosition[2]
+          ]
+        },
+        () => {
+          // console.warn(this.state.position, '< -- this.state.position');
+        }
+      );
     };
 
     return (
-      <ViroARScene
-      //  onTrackingUpdated={onInitialized()}
-      >
-        <ViroText
-          text={this.state.text}
-          scale={[0.5, 0.5, 0.5]}
-          position={[0, 0, -1]}
-        />
-        <ViroARImageMarker target={'targetOne'}>
-          <ViroNode>
+      <ViroARScene>
+        <ViroARImageMarker target={'targetOne'} onAnchorFound={anchorFound}>
+          <ViroNode dragType="FixedToWorld">
             <ViroImage
               height={1}
               width={1}
-              placeholderSource={require('../images/red-one.jpg')}
-              source={require('../images/red-one.jpg')}
+              placeholderSource={require('../images/markerTick.png')}
+              source={require('../images/markerTick.png')}
               rotation={[-90, 0, 0]} // ---> working!
               position={[0, 0, 0]} // ---> working!
-              // rotation={[-70, 0, 0]}
               ref={this._setARNodeRef.bind(this)}
               scale={[0.2, 0.2, 0.2]}
             />
           </ViroNode>
-          <ViroNode
-            dragType="FixedToWorld"
-            // onDrag={this._onDrag.bind(this)}
-            onDrag={() => {}}
-            onClick={onClick()}
-            // onPinch={this._onPinch.bind(this)}
-            scale={[0.6, 0.6, 0.6]}
-          >
+          <ViroNode dragType="FixedToWorld">
             <ViroImage
               height={1}
               width={1}
               placeholderSource={require('../images/victoria-station-1926.jpg')}
               source={require('../images/victoria-station-1926.jpg')}
               rotation={[rotationX, rotationY, rotationZ]}
-              position={[0, 2, 0]} // ---> working!
-              ref={this._setARNodeRef.bind(this)}
+              // position ---> default [0,1,0]
+              position={[-1, 1, 0]} // ABOVE KEYBOARD
+              // position={[-0.049, 1.145, -0.177]} // ON SHELF
               scale={[size, size, size]}
+              // rotation={[348, 0, 0]}
+              // position={[1.881, 0.276, -1.766]}
+              // scale={[0.48, 0.48, 0.48]}
+              ref={this._setARNodeRef.bind(this)}
               opacity={opacity}
+              onDrag={onDrag}
             />
           </ViroNode>
         </ViroARImageMarker>
-        {/* 
-        <ViroARImageMarker target={'targetTwo'}>
-          <ViroNode
-            dragType="FixedToWorld"
-            onPinch={this._onPinch.bind(this)}
-            scale={[0.6, 0.6, 0.6]}
-          >
+
+        {/* <ViroARImageMarker target={'targetTwo'} onAnchorFound={this._send2}>
+          <ViroNode>
             <ViroImage
               height={1}
               width={1}
               placeholderSource={require('../images/blue-two.jpg')}
               source={require('../images/blue-two.jpg')}
-              rotation={[-10, 0, 0]} // ---> working!
-              position={[0, 2, 0]} // ---> working!
-              // rotation={[-70, 0, 0]}
-              // position={[0, 0, 0]}
+              rotation={[-90, 0, 0]} // ---> working!
+              position={[0, 0, 0]} // ---> working!
               ref={this._setARNodeRef.bind(this)}
               scale={[0.2, 0.2, 0.2]}
             />
@@ -108,48 +127,16 @@ export default class HelloWorldSceneAR extends Component {
     );
   }
 
-  // _onInitialized(state, reason) {
-  //   console.warn('onInitialized');
-  //   console.warn(rotationX, ' <--- rotationX');
-  // }
+  _sendUpCorrectPositioning(coords3d) {}
 
   _setARNodeRef(component) {
     this.arNodeRef = component;
   }
 
-  // _onDrag(draggedToPosition, source) {
-  //   this.setState({
-  //     position: [
-  //       draggedToPosition[0],
-  //       draggedToPosition[1],
-  //       draggedToPosition[2]
-  //     ]
-  //   });
-  // }
-
-  // _onPinch(pinchState, scaleFactor, source) {
-  //   let newScale = this.state.scale.map(vector => {
-  //     return vector * scaleFactor;
-  //   });
-
-  //   if (pinchState == 3) {
-  //     this.setState({
-  //       scale: newScale
-  //       // text: '!!!'
-  //       // scale: [2.5, 2.5, 2.5]
-  //     });
-  //     // update scale of obj by multiplying by scaleFactor  when pinch ends.
-  //     return;
-  //   }
-
-  //   this.arNodeRef.setNativeProps({ scale: newScale });
-  //   //set scale using native props to reflect pinch.
-  // }
-
-  // componentDidUpdate(prevProps, prevState, snapshot) {
-  //   console.warn('HelloWorldSceneAR.js UPDATING!');
-  //   console.warn(prevProps, ' ***');
-  // }
+  componentDidUpdate() {
+    const sendPositionUp = this.props.arSceneNavigator.viroAppProps[1];
+    sendPositionUp(this.state.position);
+  }
 }
 
 ViroARTrackingTargets.createTargets({
@@ -173,6 +160,31 @@ var styles = StyleSheet.create({
     textAlignVertical: 'center',
     textAlign: 'center'
   }
+  // hidden: {
+  //   display: 'none'
+  // },
+  // visible: {
+  //   backgroundColor: 'transparent',
+  //   opacity: 1
+  // },
+
+  // scanMsgVisible: {
+  //   // position: 'absolute',
+  //   color: '#FFFFFF',
+  //   flex: 1,
+  //   textAlignVertical: 'center',
+  //   textAlign: 'center',
+  //   fontWeight: 'bold'
+  // }
+  // scanMsgHidden: {
+  //   position: 'absolute',
+  //   color: '#FFFFFF',
+  //   flex: 1,
+  //   textAlignVertical: 'center',
+  //   textAlign: 'center',
+  //   fontWeight: 'bold',
+  //   display: 'none'
+  // }
 });
 
 module.exports = HelloWorldSceneAR;

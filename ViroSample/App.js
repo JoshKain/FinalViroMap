@@ -107,7 +107,6 @@ export default class ViroSample extends Component {
   // This function returns an anonymous/lambda function to be used
   // by the experience selector buttonsHelloWorldSceneAR
   _getExperienceButtonOnPress(navigatorType) {
-    console.warn('hitting getExeprienceButtonOnPress...');
     return () => {
       this.setState({
         navigatorType: navigatorType
@@ -134,7 +133,7 @@ export default class ViroSample extends Component {
 var localStyles = StyleSheet.create({
   viroContainer: {
     flex: 1,
-    backgroundColor: 'black'
+    backgroundColor: 'transparent'
   },
   outer: {
     flex: 1,
